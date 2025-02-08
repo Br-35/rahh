@@ -1,5 +1,5 @@
 #include <stdio.h>
-//i am
+//i am thou
 void inputNum(float *input) {
 	printf("Input a number: ");
     scanf("%f", input);
