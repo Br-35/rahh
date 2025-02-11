@@ -27,22 +27,24 @@ int main () {
     float input1, input2, output;
     char op;
     int nop;
+	int state = 1;
 
-//    printf("Input a number: ");
-//    scanf("%f", &input1);
-	inputNum(&input1);
-
-    printf("Choose op (+ - * or /): ");
-    scanf("%c", &op);
-    scanf("%c", &op);
-
-    getOp(&op, &nop);
-
-//    printf("Input a number: ");
-//    scanf("%f", &input2);
-	inputNum(&input2);
+	while (state == 1) {
+		inputNum(&input1);
 	
-    doOp(nop, input1, input2, &output);
-
-    printf("%.2f", output);
+	    printf("Choose op (+ - * or /): ");
+	    scanf("%c", &op);
+	    scanf("%c", &op);
+	
+	    getOp(&op, &nop);
+	
+		inputNum(&input2);
+		
+	    doOp(nop, input1, input2, &output);
+	
+	    printf("%.2f\n", output);
+	    
+	    printf("Calculate again? (1=yes, 2=no): ");
+	    scanf("%d", &state);
+	}
 }
